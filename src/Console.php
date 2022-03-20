@@ -17,6 +17,15 @@ class Console
         echo $this->getColored($text, $color) . PHP_EOL;
     }
 
+    public function title(string $text, string $separator = '='): void
+    {
+        $line = str_repeat($separator, strlen($text));
+        $this->printLine($line);
+        $this->printLine($text);
+        $this->printLine($line);
+        $this->printLine('');
+    }
+
     public function line(string $text): void 
     {
         $this->printLine($text);

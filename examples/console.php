@@ -6,6 +6,8 @@ use Vaneves\Console\Console;
 
 $console = new Console();
 
+$console->title('A highlighted title for the section');
+
 $console->line('A regular line.');
 
 $console->success('Operation executed successfully!');
