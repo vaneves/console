@@ -94,5 +94,17 @@ class Console
         $line = $this->getColored($icon, Color::RED) .' '. $text;
         $this->printLine($line);
     }
+
+    public function progress(iterable $items, callable $callback): void 
+    {
+        $total = count($items);
+        $progress = new Progress($total);
+        $progress->start();
+        foreach ($items as $item) {
+            $callback($item);
+            $progress->advance();
+        }
+        $progress->finish();
+    }
 }
 
