@@ -42,8 +42,11 @@ class Console
         $this->printLine($text, Color::RED);
     }
 
-    public function comment(string $text): void 
+    public function comment(string $text, bool $slash = true): void 
     {
+        if ($slash) {
+            $text = '// '. $text;
+        }
         $this->printLine($text, Color::GRAY);
     }
 }
