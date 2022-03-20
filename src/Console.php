@@ -41,5 +41,10 @@ class Console
     {
         $this->printLine($text, Color::RED);
     }
+
+    public function comment(string $text): void 
+    {
+        $this->printLine($text, Color::GRAY);
+    }
 }
 

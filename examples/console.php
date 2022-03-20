@@ -12,3 +12,4 @@ $console->success('Operation executed successfully!');
 $console->info('This is just highlighted information.');
 $console->warning('This requires your attention!');
 $console->error('Oops! Error during execution!');
+$console->comment('Just a comment.');
