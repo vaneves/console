@@ -58,5 +58,41 @@ class Console
         }
         $this->printLine($text, Color::GRAY);
     }
+
+    public function successWithIcon(string $text, ?string $icon = null): void 
+    {
+        if ($icon === null) {
+            $icon = "\u{2714}"; // ✔
+        }
+        $line = $this->getColored($icon, Color::GREEN) .' '. $text;
+        $this->printLine($line);
+    }
+
+    public function infoWithIcon(string $text, ?string $icon = null): void 
+    {
+        if ($icon === null) {
+            $icon = "\u{261B}"; // ☛
+        }
+        $line = $this->getColored($icon, Color::BLUE) .' '. $text;
+        $this->printLine($line);
+    }
+
+    public function warningWithIcon(string $text, ?string $icon = null): void 
+    {
+        if ($icon === null) {
+            $icon = "\u{26A0}"; // ⚠
+        }
+        $line = $this->getColored($icon, Color::YELLOW) .' '. $text;
+        $this->printLine($line);
+    }
+
+    public function errorWithIcon(string $text, ?string $icon = null): void 
+    {
+        if ($icon === null) {
+            $icon = "\u{2718}"; // ✘
+        }
+        $line = $this->getColored($icon, Color::RED) .' '. $text;
+        $this->printLine($line);
+    }
 }
 

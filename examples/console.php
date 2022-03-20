@@ -16,3 +16,13 @@ $console->warning('This requires your attention!');
 $console->error('Oops! Error during execution!');
 $console->comment('Just a comment.');
 $console->comment('Just a comment without slash.', false);
+
+$console->successWithIcon('Operation executed successfully!');
+$console->infoWithIcon('This is just highlighted information.');
+$console->warningWithIcon('This requires your attention!');
+$console->errorWithIcon('Oops! Error during execution!');
+
+$console->successWithIcon('Operation executed successfully!', '❤');
+$console->infoWithIcon('This is just highlighted information.', '➥');
+$console->warningWithIcon('This requires your attention!', '➤');
+$console->errorWithIcon('Oops! Error during execution!', '✖');
