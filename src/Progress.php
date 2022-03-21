@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace Vaneves\Console;
 
 class Progress
@@ -15,7 +17,7 @@ class Progress
 
     protected function getBar(int $percentage): string
     {
-        $progress = ceil($percentage / 4);
+        $progress = (int)ceil($percentage / 4);
         $remaining = 25 - $progress;
         $bar = '';
         if ($progress > 0) {
@@ -38,7 +40,7 @@ class Progress
         if ($this->progress > $this->total) {
             $this->total = $this->progress;
         }
-        $percentage = floor((100 * $this->progress) / $this->total);
+        $percentage = (int)floor((100 * $this->progress) / $this->total);
         echo "\r{$this->progress}/{$this->total} [{$this->getBar($percentage)}] {$percentage}%";
     }
 
