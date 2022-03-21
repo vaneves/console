@@ -106,5 +106,11 @@ class Console
         }
         $progress->finish();
     }
+
+    public function table(array $rows): void 
+    {
+        $table = new Table($rows);
+        $table->show();
+    }
 }
 
