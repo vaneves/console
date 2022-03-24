@@ -129,23 +129,23 @@ class ConsoleTest extends TestCase
 
     public function testPrintProgressBar(): void
     {
-        $bar = "\r0/1 [░░░░░░░░░░░░░░░░░░░░░░░░░] 0%";
-        $bar .= "\r1/1 [▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓] 100%\r\n";
+        $output = "\r0/1 [░░░░░░░░░░░░░░░░░░░░░░░░░] 0%";
+        $output .= "\r1/1 [▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓] 100%\r\n";
 
-        $this->expectOutputString($bar);
+        $this->expectOutputString($output);
         $console = new Console();
         $console->progress([1], function ($n) {});
     }
 
     public function testPrintTable(): void
     {
-        $bar = '+------+' . PHP_EOL;
-        $bar .= '| name |' . PHP_EOL;
-        $bar .= '+------+' . PHP_EOL;
-        $bar .= '| Test |' . PHP_EOL;
-        $bar .= '+------+' . PHP_EOL;
+        $output = '+------+' . PHP_EOL;
+        $output .= '| name |' . PHP_EOL;
+        $output .= '+------+' . PHP_EOL;
+        $output .= '| Test |' . PHP_EOL;
+        $output .= '+------+' . PHP_EOL;
 
-        $this->expectOutputString($bar);
+        $this->expectOutputString($output);
         $console = new Console();
         $console->table([
             [
